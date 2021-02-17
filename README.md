@@ -80,9 +80,9 @@ Create a model object controller called EntryController that will manage adding,
 2. Create a sharedController property as a shared instance. 
 * note: Review the syntax for creating shared instance properties
 3. Add an entries Array property that will be the source of truth for your application
-4. Create a ```createEntry(title: String, body: String)``` fucntion, and build it out.
+4. Create a ```createEntry(title: String, body: String)``` function, and build it out.
 * Don't forget to call your `CoreDataStack.saveContext` function
-5. Crate a fetchRequest property (review the syntax below)
+5. Create a fetchRequest property (review the syntax below)
 ```
 private lazy var fetchRequest: NSFetchRequest<Entry> = {
     let request = NSFetchRequest<Entry>(entityName: "Entry")
@@ -121,7 +121,7 @@ This view needs to serve as a reading and editing view. You will add a UITextFie
 #### View Setup
 1. Add a UIViewController scene
 2. Add a UITextField to the top of the scene
-3. Add a UITextViiew to the miffle of the scene
+3. Add a UITextView to the middle of the scene
 4. Add a UIButton with a title 'Clear' to the bottom of the scene 
 5. Add a UIBarButtonItem to right side of the navigation bar and switch it to a save item
 
@@ -137,7 +137,7 @@ This view needs to serve as a reading and editing view. You will add a UITextFie
 3. After the guard statement, still inside your `updateViews` function, update your `titleTextField` and `bodyTextView` to have the assosiated strings found on your unwrapped entry
 8. Connect actions for your clear button (`clearButtonTapped`) and save button (`saveButtonTapped`)
 9. In your `clearButtonTapped` IBAction, set the text values of your `titleTextField` and `bodyTextView` to be empty stings, this will clear any text you have in those views.
-10. In your `saveButtonTapped` IBAction, determine if you have an entry or not, and if you do, call your `updateEntry` function that exists on your model contrller. If you do not have an entry, call your `createEntry` function that exists on your model controller.
+10. In your `saveButtonTapped` IBAction, determine if you have an entry or not, and if you do, call your `updateEntry` function that exists on your model controller. If you do not have an entry, call your `createEntry` function that exists on your model controller.
 
 
 ### Segue
@@ -155,7 +155,7 @@ After building out your segue, you should have an application that shows you a l
 
 ## Black Diamond
 1. Give your app the ability to delete entries.
-* A few things to consider: you will need a delete entry function on your model controller, you will need to conform your entry model to be equatable, you will need to implement the commit EditingStyle sata source method on your EntriesListTableViewController.
+* A few things to consider: you will need a delete entry function on your model controller, you will need to conform your entry model to be equatable, you will need to implement the commit EditingStyle data source method on your EntriesListTableViewController.
 
 ## Copyright
 Copyright © 2020 Strayer University. Unauthorized use and/or duplication of this material without express and written permission from Strayer University is strictly prohibited. To see Devmountain's privacy policy, please vistit https://devmountain.com/privacy
